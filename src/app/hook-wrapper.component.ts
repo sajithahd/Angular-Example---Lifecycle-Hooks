@@ -8,18 +8,20 @@ import { Component } from "@angular/core";
     </div>
     <button (click)="toggleHook()">Toggle Hook Component</button>
 
-    <hook [name]="name"></hook>
+    <hook *ngIf="displayMe" [name]="name"></hook>
   `,
   styleUrls: [ './app.component.css' ]
 })
 
 export class HookWrapperComponent{
   name: string;
+  displayMe: boolean;
 
   constructor(){
     this.name = "HOOK DEMO"
   }
 
-  toggleHook(){    
+  toggleHook(){   
+    this.displayMe = !this.displayMe; 
   }
 }
