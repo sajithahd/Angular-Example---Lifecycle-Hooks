@@ -30,7 +30,11 @@ export class HookComponent
   }
   
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("ngOnChanges: " + this.name);
+    for(let prop in changes){
+      if(prop === "name"){
+          console.log("ngOnChanges: " + changes.name.currentValue);
+      }
+    }
   }
   ngDoCheck(): void {
     console.log("ngDoCheck: " + this.name);
