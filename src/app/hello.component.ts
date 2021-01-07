@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'hello',
-  template: `<h1>{{appName}}!</h1>`,
-  styles: [`h1 { font-family: Lato; }`]
+  selector: 'header',
+  template: `<h3>{{appName}}!</h3>`
 })
 export class HelloComponent  {
   @Input() appName: string;
