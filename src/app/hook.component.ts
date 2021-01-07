@@ -28,6 +28,7 @@ export class HookComponent
   ngOnInit(): void {
     console.log("ngOnInit: " + this.name);
   }
+  
   ngOnChanges(changes: SimpleChanges): void {
     console.log("ngOnChanges: " + this.name);
   }
