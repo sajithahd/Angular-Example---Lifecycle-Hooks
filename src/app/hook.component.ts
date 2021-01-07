@@ -22,31 +22,33 @@ export class HookComponent
 
   constructor(){
     this.name = "";
-    console.log("Constructor: " + this.name);
+    console.log("Constructor: " + `${this.name? this.name:'No name mapped yet'}`);
   }
 
   ngOnInit(): void {
     console.log("Constructor: " + this.name);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Constructor: " + this.name);
+    
+    console.log("OnChanges: " + this.name);
   }
   ngDoCheck(): void {
-    console.log("Constructor: " + this.name);
+    console.log("DoCheck: " + this.name);
   }
   ngAfterContentInit(): void {
-    console.log("Constructor: " + this.name);
+    console.log("AfterContentInit: " + this.name);
   }
   ngAfterContentChecked(): void {
-    console.log("Constructor: " + this.name);
+    console.log("AfterContentChecked: " + this.name);
   }
   ngAfterViewInit(): void {
-    console.log("Constructor: " + this.name);
+    console.log("AfterViewInit: " + this.name);
   }
   ngAfterViewChecked(): void {
-    console.log("Constructor: " + this.name);
+    console.log("AfterViewChecked: " + this.name);
   }
   ngOnDestroy(): void {
-    console.log("Constructor: " + this.name);
+    console.log("OnDestroy: " + this.name);
   }
+
 }
