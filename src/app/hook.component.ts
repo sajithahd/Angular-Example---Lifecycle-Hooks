@@ -1,35 +1,51 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked,  AfterViewInit,  Component, DoCheck,  Input, OnChanges,  OnDestroy,    OnInit, SimpleChanges } from "@angular/core";
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges
+} from "@angular/core";
 
 @Component({
-  selector: 'hook',
-  template:`
-    <div>Now you can see me {{name}}</div>
+  selector: "hook",
+  template: `
+    <div>Now you can see me {{ name }}</div>
   `
 })
-
-export class HookComponent 
-      implements 
-          OnInit, 
-          OnChanges, 
-          DoCheck,
-          AfterContentInit,
-          AfterContentChecked,
-          AfterViewInit,
-          AfterViewChecked,
-          OnDestroy {
-
+export class HookComponent
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
   @Input() name: string;
 
-  constructor(){
+  constructor() {
     this.name = "";
-    console.log("Constructor: " + `${this.name? this.name:'No name mapped yet'}`);
+    console.log(
+      "Constructor: " + `${this.name ? this.name : "No name mapped yet"}`
+    );
   }
 
   ngOnInit(): void {
     console.log("Constructor: " + this.name);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    
+    for (const prop in changes) {
+      if (prop === "name") {
+        console.log("OnChanges: " + changes.name.currentValue);
+      }
+    }
     console.log("OnChanges: " + this.name);
   }
   ngDoCheck(): void {
@@ -50,5 +66,4 @@ export class HookComponent
   ngOnDestroy(): void {
     console.log("OnDestroy: " + this.name);
   }
-
 }
