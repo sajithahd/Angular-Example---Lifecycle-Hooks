@@ -22,7 +22,7 @@ export class HookComponent
 
   constructor(){
     this.name = "";
-    console.log("Constructor: " + this.name);
+    console.log("Constructor: " + `${this.name? this.name: ' props not intialized yet'}`);
   }
 
   ngOnInit(): void {
