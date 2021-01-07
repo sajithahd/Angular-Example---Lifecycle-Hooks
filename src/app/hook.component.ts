@@ -26,27 +26,27 @@ export class HookComponent
   }
 
   ngOnInit(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngOnInit: " + this.name);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngOnChanges: " + this.name);
   }
   ngDoCheck(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngDoCheck: " + this.name);
   }
   ngAfterContentInit(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngAfterContentInit: " + this.name);
   }
   ngAfterContentChecked(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngAfterContentChecked: " + this.name);
   }
   ngAfterViewInit(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngAfterViewInit: " + this.name);
   }
   ngAfterViewChecked(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngAfterViewChecked: " + this.name);
   }
   ngOnDestroy(): void {
-    console.log("Constructor: " + this.name);
+    console.log("ngOnDestroy: " + this.name);
   }
 }
