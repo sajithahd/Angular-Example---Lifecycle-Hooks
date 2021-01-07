@@ -4,6 +4,6 @@ import { Component, Input } from '@angular/core';
   selector: 'header',
   template: `<h3>{{appName}}!</h3>`
 })
-export class HelloComponent  {
+export class HeaderComponent  {
   @Input() appName: string;
 }
